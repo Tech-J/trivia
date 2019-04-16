@@ -1,0 +1,135 @@
+*{
+    font-family: 'Bangers', cursive;
+}
+.quizformContainer,
+.playerInfoContainer,
+.triviaContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.quizformContainer>form,
+.triviaContainer>article{
+    width: 35%;
+    display: grid;
+    grid-gap: 15px;
+    border-radius: 10px;
+    padding: 10px;
+    border:5px solid black;
+}
+.quizformContainer>form>section{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px,1fr));
+    grid-template-rows: repeat(auto-fit, minmax(75px,1fr));
+    grid-gap: 25px;
+}
+.quizformContainer>form>section>input{
+    border-radius:5px;
+    box-shadow: 2px 2px 2px 2px rgb(23,3,3);
+    font-size: 42px;
+    padding: 5px;
+}
+.triviaCategory>select{
+    font-size: 28px;
+    box-shadow: 2px 2px 2px 2px rgb(23,3,3);
+}
+.triviaNameInput>*{
+    grid-column:1/-1;
+    height: 50px;
+    font-size: 75px;
+}
+.playerInfoContainer{
+    min-height: 100px;
+    z-index:2;
+}
+.playerInfo{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-gap: 10px;
+    grid-auto-flow: column;
+    width:50%;
+}
+
+.triviaContainer>*{
+    font-size:28px;
+}
+
+.triviaGame{
+    grid-gap:3px;
+    grid-template-rows: repeat(5,100px);
+    opacity: 0;
+    z-index:1;
+}
+.triviaGame>p{
+    border:5px solid grey;
+    border-radius:10px; 
+    margin: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    text-justify: inter-word;
+    padding: 10px;
+}
+
+.answers{
+    transition: .5s;
+}
+
+.answers:hover{
+    background-color: cornflowerblue;
+    color:white;
+}
+
+.slideUp{
+    animation: slideUp 5s forwards;
+    animation-delay: 5s;
+}
+
+.zip{
+      animation:zip 5s  forwards;
+}
+.fadeIn{
+    animation: fadeIn 5s forwards;
+    animation-delay: 5s;
+}
+
+.slideDown{
+    animation: slideDown 5s forwards;
+    animation-delay: 5s;
+}
+
+@keyframes zip{
+    to{
+        transform: scaleY(0);
+    }
+}
+
+@keyframes slideUp{
+    to{
+        transform: translateY(-80%);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown{
+    to{
+        transform: translateY(100%);
+       
+    }
+}
+
+@keyframes fadeIn{
+    50%{
+        transform: translateY(-90%);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateY(-100%);
+        opacity: 1;
+    }
+}
